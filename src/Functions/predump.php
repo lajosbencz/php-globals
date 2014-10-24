@@ -1,7 +1,5 @@
 <?php
 
-namespace LajosBencz\Globals\Functions;
-
 function predump($variable) {
     $variables = func_get_args();
     if(!is_cli()) print '<pre>';
