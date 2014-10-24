@@ -20,7 +20,8 @@ namespace {
 					unset($array[$node]);
 					return null;
 				}
-				return $array[$node];
+				if(isset($array[$node])) return $array[$node];
+				return null;
 			}
 			if(!is_array($array)) $array = array();
 			if($push) $array[$node][] = $value;
