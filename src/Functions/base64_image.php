@@ -1,5 +1,7 @@
 <?php
 
+namespace LajosBencz\Globals\Functions;
+
 function base64_image($path, $unlink=false) {
     $type = pathinfo($path, PATHINFO_EXTENSION);
     $data = file_get_contents($path);

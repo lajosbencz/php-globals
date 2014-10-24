@@ -1,5 +1,7 @@
 <?php
 
+namespace LajosBencz\Globals\Functions;
+
 function array_node(&$array, $node, $value=null, $unset=false, $delimiter='.', $level=0) {
     if($level==0) $node = str_replace("[]",".",str_replace(array("[","]"),"",$node));
     $node = preg_replace("/\\.+/",".",$node);

@@ -1,5 +1,7 @@
 <?php
 
+namespace LajosBencz\Globals\Functions;
+
 function preprint($format) {
     $a = func_get_args();
     if(count($a)>0) {
