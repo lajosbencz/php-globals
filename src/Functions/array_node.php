@@ -2,7 +2,7 @@
 
 namespace {
 
-	function array_node(&$array, $node, $value=null, $unset=false, $delimiter='.', $level=0) {
+	function array_node(&$array, $node, &$value=null, $unset=false, $delimiter='.', $level=0) {
 		if($level==0) $node = str_replace("[]",".",str_replace(array("[","]"),"",$node));
 		$node = preg_replace("/\\.+/",".",$node);
 		$node = preg_replace("/^\\./","",$node);
@@ -24,8 +24,8 @@ namespace {
 				return null;
 			}
 			if(!is_array($array)) $array = array();
-			if($push) $array[$node][] = $value;
-			else $array[$node] = $value;
+			if($push) $array[$node][] = &$value;
+			else $array[$node] = &$value;
 			return $value;
 		}
 		$k = substr($node,0,$p);
